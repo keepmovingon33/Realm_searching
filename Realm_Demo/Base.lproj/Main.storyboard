@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Realm_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="t3O-w8-T6q">
+                                <rect key="frame" x="20" y="381" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="t3O-w8-T6q" secondAttribute="height" multiplier="17:2" id="lt0-r9-GgT"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDR-Lo-4sh">
+                                <rect key="frame" x="183" y="445" width="48" height="30"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="btnSearchTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9lh-uh-ien"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qaK-Kh-Lkc">
+                                <rect key="frame" x="0.0" y="495" width="414" height="367"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemSearchViewCell" rowHeight="75" id="uHb-nP-eo7" customClass="ItemSearchViewCell" customModule="Realm_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uHb-nP-eo7" id="ZZP-pH-3aK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgt-jJ-LSp">
+                                                    <rect key="frame" x="20" y="15" width="334" height="45"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sK-QS-qlB">
+                                                    <rect key="frame" x="369" y="22.5" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="UZE-X6-VCR"/>
+                                                        <constraint firstAttribute="width" secondItem="6sK-QS-qlB" secondAttribute="height" multiplier="1:1" id="Vyh-G6-Dl2"/>
+                                                    </constraints>
+                                                    <state key="normal" title="X"/>
+                                                    <connections>
+                                                        <action selector="btnDeleteTapped:" destination="uHb-nP-eo7" eventType="touchUpInside" id="z4m-dy-4sR"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="6sK-QS-qlB" secondAttribute="trailing" constant="15" id="7Bg-fK-G4O"/>
+                                                <constraint firstItem="6sK-QS-qlB" firstAttribute="centerY" secondItem="hgt-jJ-LSp" secondAttribute="centerY" id="gg7-yy-5jE"/>
+                                                <constraint firstItem="hgt-jJ-LSp" firstAttribute="centerY" secondItem="ZZP-pH-3aK" secondAttribute="centerY" id="iep-Uu-JtP"/>
+                                                <constraint firstItem="hgt-jJ-LSp" firstAttribute="leading" secondItem="ZZP-pH-3aK" secondAttribute="leading" constant="20" id="jgX-Mp-E3V"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hgt-jJ-LSp" secondAttribute="bottom" constant="15" id="m3P-dG-pG0"/>
+                                                <constraint firstItem="6sK-QS-qlB" firstAttribute="leading" secondItem="hgt-jJ-LSp" secondAttribute="trailing" constant="15" id="qGp-bQ-VAc"/>
+                                                <constraint firstItem="hgt-jJ-LSp" firstAttribute="top" secondItem="ZZP-pH-3aK" secondAttribute="top" constant="15" id="qt9-09-Sgx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lbContent" destination="hgt-jJ-LSp" id="eSf-D3-4li"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qaK-Kh-Lkc" firstAttribute="top" secondItem="ZDR-Lo-4sh" secondAttribute="bottom" constant="20" id="1ww-Pc-FUt"/>
+                            <constraint firstItem="qaK-Kh-Lkc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H3D-99-c8V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qaK-Kh-Lkc" secondAttribute="bottom" id="Jfi-fU-ffo"/>
+                            <constraint firstItem="t3O-w8-T6q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ON8-88-2j0"/>
+                            <constraint firstItem="ZDR-Lo-4sh" firstAttribute="centerX" secondItem="t3O-w8-T6q" secondAttribute="centerX" id="RFD-rb-yZZ"/>
+                            <constraint firstItem="t3O-w8-T6q" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-50" id="c1G-ck-jpV"/>
+                            <constraint firstItem="t3O-w8-T6q" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hZ0-Fu-bWH"/>
+                            <constraint firstItem="ZDR-Lo-4sh" firstAttribute="top" secondItem="t3O-w8-T6q" secondAttribute="bottom" constant="20" id="jAu-X3-c3e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qaK-Kh-Lkc" secondAttribute="trailing" id="mkC-4E-a0t"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="t3O-w8-T6q" id="8HN-g4-hvu"/>
+                        <outlet property="tableView" destination="qaK-Kh-Lkc" id="AKo-Y5-REg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+        </scene>
+    </scenes>
+</document>
